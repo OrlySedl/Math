@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Orsel
+namespace Orsel.Math
 {
-    public static class Math
+    public static class Functions
     {
         public static int Factorial(int n)
         {
