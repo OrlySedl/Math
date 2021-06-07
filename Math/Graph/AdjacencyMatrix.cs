@@ -20,10 +20,10 @@ namespace Orsel.Math.Graph
         {
             Vertices = vertices;
             Type = type;
-            matrix = new BitArray[vertices];
+            matrix = new BitArray[Vertices];
             for (int i = 0; i < matrix.Length; i++)
             {
-                matrix[i] = new BitArray(vertices);
+                matrix[i] = new BitArray(Vertices);
             }
         }
 
