@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Orsel.Math.Graph
 {
@@ -27,17 +28,17 @@ namespace Orsel.Math.Graph
             }
         }
 
-        public bool GetValue(int row, int col)
+        public BitArray GetList(int vertex)
         {
-            return matrix[row][col];
+            return matrix[vertex];
         }
 
-        public void SetValue(int row, int col, bool value)
+        public void AddEdge(int vertexBegin, int vertexEnd)
         {
-            matrix[row][col] = value;
+            matrix[vertexBegin][vertexEnd] = true;
             if (Type == TypeGraph.Undirected)
             {
-                matrix[col][row] = value;
+                matrix[vertexEnd][vertexBegin] = true;
             }
         }
 

@@ -21,9 +21,9 @@ namespace Orsel.Math.Graph
             }
         }
 
-        public List<int> GetList(int row)
+        public List<int> GetList(int vertex)
         {
-            return list[row];
+            return list[vertex];
         }
 
         public void AddEdge(int vertexBegin, int vertexEnd)
