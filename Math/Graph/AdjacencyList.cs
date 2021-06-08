@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Orsel.Math.Graph
 {
-    class AdjacencyList
+    public class AdjacencyList
     {
         private List<int>[] list;
 
@@ -21,22 +21,17 @@ namespace Orsel.Math.Graph
             }
         }
 
-        public int GetValue(int row, int col)
-        {
-            return list[row][col];
-        }
-
         public List<int> GetList(int row)
         {
             return list[row];
         }
 
-        public void SetValue(int row, int col)
+        public void AddEdge(int vertexBegin, int vertexEnd)
         {
-            list[row].Add(col);
+            list[vertexBegin].Add(vertexEnd);
             if (Type == TypeGraph.Undirected)
             {
-                list[col].Add(row);
+                list[vertexEnd].Add(vertexBegin);
             }
         }
 
