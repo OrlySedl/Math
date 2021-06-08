@@ -20,5 +20,25 @@ namespace Orsel.Math.Graph
                 list[i] = new List<int>();
             }
         }
+
+        public int GetValue(int row, int col)
+        {
+            return list[row][col];
+        }
+
+        public List<int> GetList(int row)
+        {
+            return list[row];
+        }
+
+        public void SetValue(int row, int col)
+        {
+            list[row].Add(col);
+            if (Type == TypeGraph.Undirected)
+            {
+                list[col].Add(row);
+            }
+        }
+
     }
 }
