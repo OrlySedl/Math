@@ -40,5 +40,19 @@ namespace Orsel.Math.Graph
             }
         }
 
+        public override string ToString()
+        {
+            string s = String.Empty;
+            for (int row = 0; row < list.Length; row++)
+            {
+                s += $"{row}: ";
+                for (int col = 0; col < list[row].Count; col++)
+                {
+                    s += $"{list[row][col]} ";
+                }
+                s += Environment.NewLine;
+            }
+            return s;
+        }
     }
 }
