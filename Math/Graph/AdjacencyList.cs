@@ -3,17 +3,12 @@ using System.Collections.Generic;
 
 namespace Orsel.Math.Graph
 {
-    public class AdjacencyList
+    public class AdjacencyList : GraphStorage
     {
         private List<int>[] list;
 
-        public readonly int Vertices;
-        public readonly TypeGraph Type;
-
-        public AdjacencyList(int vertices, TypeGraph type)
+        public AdjacencyList(int vertices, TypeGraph type) : base(vertices, type)
         {
-            Vertices = vertices;
-            Type = type;
             list = new List<int>[Vertices];
             for (int i = 0; i < list.Length; i++)
             {
@@ -26,7 +21,7 @@ namespace Orsel.Math.Graph
             return list[vertex];
         }
 
-        public void AddEdge(int vertexBegin, int vertexEnd)
+        public override void AddEdge(int vertexBegin, int vertexEnd)
         {
             list[vertexBegin].Add(vertexEnd);
             if (Type == TypeGraph.Undirected)

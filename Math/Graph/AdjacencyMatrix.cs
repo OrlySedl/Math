@@ -10,17 +10,14 @@ namespace Orsel.Math.Graph
         Directed,
     }
 
-    public class AdjacencyMatrix
+    public class AdjacencyMatrix : GraphStorage
     {
         private BitArray[] matrix;
         
-        public readonly int Vertices;
-        public readonly TypeGraph Type;
+        
 
-        public AdjacencyMatrix(int vertices, TypeGraph type)
+        public AdjacencyMatrix(int vertices, TypeGraph type) : base(vertices, type)
         {
-            Vertices = vertices;
-            Type = type;
             matrix = new BitArray[Vertices];
             for (int i = 0; i < matrix.Length; i++)
             {
@@ -33,7 +30,7 @@ namespace Orsel.Math.Graph
             return matrix[vertex];
         }
 
-        public void AddEdge(int vertexBegin, int vertexEnd)
+        public override void AddEdge(int vertexBegin, int vertexEnd)
         {
             matrix[vertexBegin][vertexEnd] = true;
             if (Type == TypeGraph.Undirected)
