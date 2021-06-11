@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 
 namespace Orsel.Math.Graph
 {
@@ -14,8 +13,6 @@ namespace Orsel.Math.Graph
     {
         private BitArray[] matrix;
         
-        
-
         public AdjacencyMatrix(int vertices, TypeGraph type) : base(vertices, type)
         {
             matrix = new BitArray[Vertices];
@@ -25,7 +22,7 @@ namespace Orsel.Math.Graph
             }
         }
 
-        public BitArray GetList(int vertex)
+        public BitArray GetBitArray(int vertex)
         {
             return matrix[vertex];
         }
